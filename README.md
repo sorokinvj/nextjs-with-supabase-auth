@@ -10,7 +10,8 @@ It includes:
 - an example of server-side data fetching
 - CSS reset from [Josh Comeau](https://www.joshwcomeau.com/css/custom-css-reset/)
 - module aliases (baseUrl in tsconfig)
+- testing-library (jest)
 
-index.tsx file fetches starships names from [SWAPI](https://swapi.dev/) in getServerSideProps.
+index.tsx file fetches starships names from [SWAPI](https://swapi.dev/) in Home getServerSideProps.
 
 This template is based on NextJS example ['with-styled-components'](https://github.com/styled-components/styled-components).
