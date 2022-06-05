@@ -1,12 +1,13 @@
 # Nextjs starter template
 
-Start new NextJS project with this template. It includes:
+Start new NextJS project with this template.
+It includes:
 
 - Typescript
 - ESLint
 - Prettier
 - Styled-components
-- server-side data fetching
+- an example of server-side data fetching
 
 index.tsx file fetches starships names from [SWAPI](https://swapi.dev/) in getServerSideProps.
 
