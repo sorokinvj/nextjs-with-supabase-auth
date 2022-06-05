@@ -41,7 +41,7 @@ export async function getServerSideProps() {
 
 export default function Home({ starships, error }: { starships: any; error: any }) {
   return (
-    <Page>
+    <Page data-testid='main page'>
       <Title>Star Wars starships:</Title>
       {starships.results.map((starship: any) => (
         <div key={starship.name} data-testid='starship'>

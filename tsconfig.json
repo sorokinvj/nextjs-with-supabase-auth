@@ -19,6 +19,6 @@
       "test-utils": ["utils/test-utils.tsx"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./jest-setup.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest-setup.js", "jest.config.js"],
   "exclude": ["node_modules"]
 }
