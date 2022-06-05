@@ -44,7 +44,7 @@ export default function Home({ starships, error }: { starships: any; error: any 
     <Page>
       <Title>Star Wars starships:</Title>
       {starships.results.map((starship: any) => (
-        <div key={starship.name}>
+        <div key={starship.name} data-testid='starship'>
           <Name>{starship.name}</Name>
           <p>{starship.manufacturer}</p>
           <p>Cost: {starship['cost_in_credits']}</p>
