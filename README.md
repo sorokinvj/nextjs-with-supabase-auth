@@ -6,6 +6,8 @@ Start new NextJS project with this template. It includes:
 - ESLint
 - Prettier
 - Styled-components
-- SWR for fetching data
+- server-side data fetching
+
+index.tsx file fetches starships names from [SWAPI](https://swapi.dev/) in getServerSideProps.
 
 This template is based on NextJS example ['with-styled-components'](https://github.com/styled-components/styled-components).
