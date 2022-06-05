@@ -8,7 +8,14 @@ const Title = styled.h1`
 
 const Name = styled.h2`
   font-size: 20px;
-  margint-top: 10px;
+  margin-top: 10px;
+`
+
+const Page = styled.div`
+  padding: 20px;
+  p {
+    margin: 0;
+  }
 `
 
 const API = `https://swapi.dev/api/starships/`
@@ -34,7 +41,7 @@ export async function getServerSideProps() {
 
 export default function Home({ starships, error }: { starships: any; error: any }) {
   return (
-    <>
+    <Page>
       <Title>Star Wars starships:</Title>
       {starships.results.map((starship: any) => (
         <div key={starship.name}>
@@ -45,6 +52,6 @@ export default function Home({ starships, error }: { starships: any; error: any 
         </div>
       ))}
       {error && <p>{error.message}</p>}
-    </>
+    </Page>
   )
 }
