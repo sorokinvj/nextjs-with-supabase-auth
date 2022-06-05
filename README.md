@@ -9,6 +9,7 @@ It includes:
 - Styled-components
 - an example of server-side data fetching
 - CSS reset from [Josh Comeau](https://www.joshwcomeau.com/css/custom-css-reset/)
+- module aliases (baseUrl in tsconfig)
 
 index.tsx file fetches starships names from [SWAPI](https://swapi.dev/) in getServerSideProps.
 
