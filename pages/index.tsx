@@ -2,7 +2,7 @@ import { fetcher } from '../helpers/fetcher'
 
 const API = `https://swapi.dev/api/starships/`
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const starships = await fetcher(API)
     return {
@@ -23,16 +23,18 @@ export async function getServerSideProps() {
 
 export default function Home({ starships, error }: { starships: any; error: any }) {
   return (
-    <div data-testid='main page'>
-      <h1>Star Wars starships:</h1>
-      {starships.results.map((starship: any) => (
-        <div key={starship.name} data-testid='starship'>
-          <p>{starship.name}</p>
-          <p>{starship.manufacturer}</p>
-          <p>Cost: {starship['cost_in_credits']}</p>
-          <p>Crew: {starship.crew}</p>
-        </div>
-      ))}
+    <div data-testid='main page' className='p-8'>
+      <h1 className='text-3xl mb-4'>Star Wars starships:</h1>
+      <div className='columns-2'>
+        {starships.results.map((starship: any) => (
+          <div key={starship.name} data-testid='starship' className='p-2 mb-2 last:mb-0 shadow-xl'>
+            <p className='text-2xl'>{starship.name}</p>
+            <p>{starship.manufacturer}</p>
+            <p>Cost: {starship['cost_in_credits']}</p>
+            <p>Crew: {starship.crew}</p>
+          </div>
+        ))}
+      </div>
       {error && <p>{error.message}</p>}
     </div>
   )
