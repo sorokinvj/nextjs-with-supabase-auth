@@ -1,8 +1,9 @@
 # Nextjs starter template
 
-Start new NextJS project with this template.
+Start new NextJS project with Supabase Auth with this template.
 It includes:
 
+- Supabase NextJS auth helpers and Auth UI
 - Typescript
 - ESLint
 - Prettier
@@ -12,3 +13,7 @@ It includes:
 - testing-library (jest)
 
 index.tsx fetches starships names from [SWAPI](https://swapi.dev/) in Home getStaticProps.
+
+## Getting Started
+
+Rename `.env.local.example` to `.env.local` and add your Supabase URL and anon key.
