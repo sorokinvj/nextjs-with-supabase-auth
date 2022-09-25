@@ -1,41 +1,23 @@
-import { fetcher } from '../helpers/fetcher'
+import React from 'react'
+import { supabaseClient, withPageAuth } from '@supabase/auth-helpers-nextjs'
+import { NextPage } from 'next'
+import { useUser } from '@supabase/auth-helpers-react'
 
-const API = `https://swapi.dev/api/starships/`
-
-export async function getStaticProps() {
-  try {
-    const starships = await fetcher(API)
-    return {
-      props: {
-        starships,
-        error: null,
-      },
-    }
-  } catch (error) {
-    return {
-      props: {
-        starships: null,
-        error,
-      },
-    }
-  }
-}
-
-export default function Home({ starships, error }: { starships: any; error: any }) {
+const Home: NextPage = () => {
+  const { user } = useUser()
   return (
-    <div data-testid='main page' className='p-8'>
-      <h1 className='text-3xl mb-4'>Star Wars starships:</h1>
-      <div className='columns-2'>
-        {starships.results.map((starship: any) => (
-          <div key={starship.name} data-testid='starship' className='p-2 mb-2 last:mb-0 shadow-xl'>
-            <p className='text-2xl'>{starship.name}</p>
-            <p>{starship.manufacturer}</p>
-            <p>Cost: {starship['cost_in_credits']}</p>
-            <p>Crew: {starship.crew}</p>
-          </div>
-        ))}
-      </div>
-      {error && <p>{error.message}</p>}
+    <div className='w-full h-full flex flex-col justify-center items-center p-4'>
+      <h1>Home</h1>
+      {user ? (
+        <>
+          <p>Authenticated as {user?.email}</p>
+          <button onClick={() => supabaseClient.auth.signOut()}>Sign out</button>
+        </>
+      ) : (
+        <p>Not authenticated</p>
+      )}
     </div>
   )
 }
+
+export default Home

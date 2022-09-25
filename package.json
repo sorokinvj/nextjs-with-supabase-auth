@@ -10,6 +10,10 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@supabase/auth-helpers-nextjs": "^0.2.8",
+    "@supabase/auth-helpers-react": "^0.2.4",
+    "@supabase/supabase-js": "^1.35.7",
+    "@supabase/ui": "^0.36.5",
     "next": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
