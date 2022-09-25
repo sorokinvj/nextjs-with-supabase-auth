@@ -1,5 +1,5 @@
 import React from 'react'
-import { supabaseClient, withPageAuth } from '@supabase/auth-helpers-nextjs'
+import { supabaseClient } from '@supabase/auth-helpers-nextjs'
 import { NextPage } from 'next'
 import { useUser } from '@supabase/auth-helpers-react'
 
