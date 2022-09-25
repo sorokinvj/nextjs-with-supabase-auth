@@ -13,8 +13,7 @@
     "next": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-is": "^18.1.0",
-    "styled-components": "^5.3.5"
+    "react-is": "^18.1.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.17.12",

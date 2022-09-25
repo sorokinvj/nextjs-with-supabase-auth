@@ -1,5 +1,5 @@
 import Home from 'pages'
-import { render, screen } from 'test-utils'
+import { render, screen } from '@testing-library/react'
 import starships from './starships.json'
 
 describe('Home', () => {
