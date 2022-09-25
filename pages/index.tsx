@@ -20,9 +20,4 @@ const Home: NextPage = () => {
   )
 }
 
-export const getServerSideProps = withPageAuth({
-  authRequired: true,
-  redirectTo: '/login',
-})
-
 export default Home
