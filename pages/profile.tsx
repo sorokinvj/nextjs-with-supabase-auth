@@ -1,8 +1,10 @@
-import { withPageAuth } from '@supabase/auth-helpers-nextjs'
+import { User, withPageAuth } from '@supabase/auth-helpers-nextjs'
 
-export default function Profile({ user }) {
-  console.log(user)
-  return <div>Hello {user.name}</div>
+interface Props {
+  user: User
+}
+const Profile: React.FC<Props> = ({ user }) => {
+  return <div>Hello {user.email}</div>
 }
 
 export const getServerSideProps = withPageAuth({ redirectTo: '/login' })
