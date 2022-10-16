@@ -1,7 +1,7 @@
 # Nextjs starter template
 
-Start new NextJS project with Supabase Auth with this template.
-It includes:
+Start new NextJS project with Supabase Auth.
+The template includes the initial boilerplate and has:
 
 - Supabase NextJS auth helpers and Auth UI
 - Typescript
