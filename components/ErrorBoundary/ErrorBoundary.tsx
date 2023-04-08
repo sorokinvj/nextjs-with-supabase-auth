@@ -15,20 +15,18 @@ export class ErrorBoundary extends React.Component<PropsWithChildren<{}>> {
   }
 
   render() {
+    console.log('ErrorBoundary', this.state)
     if (this.state.hasError) {
-      {
-        console.log('this is the case')
-      }
       const { errorInfo, error } = this.state
       return (
         <div>
           <h1>Something went wrong.</h1>
-          <p>{errorInfo}</p>
           <p>{JSON.stringify(error)}</p>
         </div>
       )
     }
 
+    console.log('NO ERROR')
     return this.props.children
   }
 }

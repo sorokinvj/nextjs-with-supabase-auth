@@ -1,23 +1,25 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 8989",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "update-types": "npx supabase gen types typescript --project-id \"irjyznxzmwvouqecchcc\" > types/supabase.ts"
   },
   "dependencies": {
-    "@supabase/auth-helpers-nextjs": "^0.2.8",
-    "@supabase/auth-helpers-react": "^0.2.4",
-    "@supabase/supabase-js": "^1.35.7",
-    "@supabase/ui": "^0.36.5",
+    "@supabase/auth-helpers-nextjs": "latest",
+    "@supabase/auth-helpers-react": "latest",
+    "@supabase/auth-ui-react": "^0.3.5",
+    "@supabase/auth-ui-shared": "^0.1.3",
+    "@supabase/supabase-js": "latest",
     "next": "latest",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-is": "^18.1.0"
+    "react": "latest",
+    "react-dom": "latest",
+    "react-is": "latest"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.17.12",

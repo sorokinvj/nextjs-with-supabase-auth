@@ -1,10 +1,13 @@
 import React from 'react'
-import { supabaseClient } from '@supabase/auth-helpers-nextjs'
+import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { NextPage } from 'next'
-import { useUser } from '@supabase/auth-helpers-react'
+import { useSessionContext, useSupabaseClient, useUser } from '@supabase/auth-helpers-react'
+import { Database } from '#/types/supabase'
 
 const Home: NextPage = () => {
-  const { user } = useUser()
+  const { isLoading, session, error } = useSessionContext()
+  const user = useUser()
+  const supabaseClient = useSupabaseClient<Database>()
   return (
     <div className='w-full h-full flex flex-col justify-center items-center p-4'>
       <h1>Home</h1>
@@ -18,6 +21,25 @@ const Home: NextPage = () => {
       )}
     </div>
   )
+}
+
+export const getServerSideProps = async (context) => {
+  const supabaseServerClient = createServerSupabaseClient<Database, 'public'>(context)
+  const { data: conversations, error } = await supabaseServerClient
+    .from('conversations')
+    .select('*')
+  if (error) {
+    console.log(error)
+    return {
+      notFound: true,
+    }
+  }
+  console.log('conversation', conversations)
+  return {
+    props: {
+      conversations: conversations ?? [],
+    },
+  }
 }
 
 export default Home
