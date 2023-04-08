@@ -4,11 +4,11 @@ Start new NextJS project with Supabase Auth.
 The template includes the initial boilerplate and has:
 
 - Supabase NextJS auth helpers and Auth UI
-  "@supabase/auth-helpers-nextjs": "latest",
-  "@supabase/auth-helpers-react": "latest",
-  "@supabase/auth-ui-react": "^0.3.5",
-  "@supabase/auth-ui-shared": "^0.1.3",
-  "@supabase/supabase-js": "latest",
+   - "@supabase/auth-helpers-nextjs": "[latest](https://github.com/supabase/auth-helpers)",
+   - "@supabase/auth-helpers-react": "[latest](https://github.com/supabase/auth-helpers)",
+   - "@supabase/auth-ui-react": "^0.3.5",
+   - "@supabase/auth-ui-shared": "^0.1.3",
+   - "@supabase/supabase-js": "latest",
 - Typescript
 - ESLint
 - Prettier
